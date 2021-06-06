@@ -1,0 +1,43 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Panosen.CodeDom.Xml.Engine
+{
+    public class GenerateOptions
+    {
+#if DEBUG
+        public string TabString { get; set; } = "\t";
+#else
+        public string TabString { get; set; } = "  ";
+#endif
+
+        private Stack<string> indents = new Stack<string>();
+
+        private string indentString = string.Empty;
+
+        public string IndentString
+        {
+            get { return indentString; }
+        }
+
+        public void PushIndent()
+        {
+            this.indents.Push(TabString);
+            this.indentString = string.Join(string.Empty, this.indents);
+        }
+
+        public void PopIndent()
+        {
+            this.indents.Pop();
+            this.indentString = string.Join(string.Empty, this.indents);
+        }
+
+        /// <summary>
+        /// [正整数]每行最多容纳的 attribute 的个数。如果不设置，则不主动换行
+        /// </summary>
+        public int AttribuesPerLine { get; set; }
+    }
+}
