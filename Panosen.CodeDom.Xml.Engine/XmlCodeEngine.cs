@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Panosen.CodeDom.Xml.Engine
 {
+    /// <summary>
+    /// XmlCodeEngine
+    /// </summary>
     public partial class XmlCodeEngine
     {
         private const string WHITESPACE = " ";
@@ -13,6 +16,12 @@ namespace Panosen.CodeDom.Xml.Engine
         private const string RIGHT_Parenthesis = ">";
         private const string SLASH = "/";
 
+        /// <summary>
+        /// Generate
+        /// </summary>
+        /// <param name="node"></param>
+        /// <param name="codeWriter"></param>
+        /// <param name="options"></param>
         public void Generate(XmlNode node, CodeWriter codeWriter, GenerateOptions options = null)
         {
             if (node == null) { return; }

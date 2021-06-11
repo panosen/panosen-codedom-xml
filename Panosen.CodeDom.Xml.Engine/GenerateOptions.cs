@@ -6,11 +6,20 @@ using System.Threading.Tasks;
 
 namespace Panosen.CodeDom.Xml.Engine
 {
+    /// <summary>
+    /// GenerateOptions
+    /// </summary>
     public class GenerateOptions
     {
 #if DEBUG
+        /// <summary>
+        /// TabString
+        /// </summary>
         public string TabString { get; set; } = "\t";
 #else
+        /// <summary>
+        /// TabString
+        /// </summary>
         public string TabString { get; set; } = "  ";
 #endif
 
@@ -18,17 +27,26 @@ namespace Panosen.CodeDom.Xml.Engine
 
         private string indentString = string.Empty;
 
+        /// <summary>
+        /// IndentString
+        /// </summary>
         public string IndentString
         {
             get { return indentString; }
         }
 
+        /// <summary>
+        /// PushIndent
+        /// </summary>
         public void PushIndent()
         {
             this.indents.Push(TabString);
             this.indentString = string.Join(string.Empty, this.indents);
         }
 
+        /// <summary>
+        /// PopIndent
+        /// </summary>
         public void PopIndent()
         {
             this.indents.Pop();
