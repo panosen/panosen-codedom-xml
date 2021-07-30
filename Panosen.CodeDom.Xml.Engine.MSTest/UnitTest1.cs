@@ -42,33 +42,37 @@ namespace Panosen.CodeDom.Xml.Engine.MSTest
 
             var expected = PrepareExpected();
 
+            File.WriteAllText("f:\\1.txt", expected);
+
+            File.WriteAllText("f:\\2.txt", actual);
+
             Assert.AreEqual(expected, actual);
         }
 
         private string PrepareExpected()
         {
             return @"<Project Sdk=""Microsoft.NET.Sdk""
-		 p0=""v0""
-		 p1=""v1""
-		 p2=""v2"">
+        p0=""v0""
+        p1=""v1""
+        p2=""v2"">
 
-	<PropertyGroup>
-		<TargetFrameworks>net452;netstandard20</TargetFrameworks>
-		<TargetFrameworks>net452;netstandard20</TargetFrameworks>
-		<TargetFrameworks>net452;netstandard20</TargetFrameworks>
-	</PropertyGroup>
+    <PropertyGroup>
+        <TargetFrameworks>net452;netstandard20</TargetFrameworks>
+        <TargetFrameworks>net452;netstandard20</TargetFrameworks>
+        <TargetFrameworks>net452;netstandard20</TargetFrameworks>
+    </PropertyGroup>
 
-	<PropertyGroup>
-		<TargetFrameworks>net452;netstandard20</TargetFrameworks>
-		<TargetFrameworks>net452;netstandard20</TargetFrameworks>
-		<TargetFrameworks>net452;netstandard20</TargetFrameworks>
-	</PropertyGroup>
+    <PropertyGroup>
+        <TargetFrameworks>net452;netstandard20</TargetFrameworks>
+        <TargetFrameworks>net452;netstandard20</TargetFrameworks>
+        <TargetFrameworks>net452;netstandard20</TargetFrameworks>
+    </PropertyGroup>
 
-	<PropertyGroup>
-		<TargetFrameworks>net452;netstandard20</TargetFrameworks>
-		<TargetFrameworks>net452;netstandard20</TargetFrameworks>
-		<TargetFrameworks>net452;netstandard20</TargetFrameworks>
-	</PropertyGroup>
+    <PropertyGroup>
+        <TargetFrameworks>net452;netstandard20</TargetFrameworks>
+        <TargetFrameworks>net452;netstandard20</TargetFrameworks>
+        <TargetFrameworks>net452;netstandard20</TargetFrameworks>
+    </PropertyGroup>
 
 </Project>
 ";

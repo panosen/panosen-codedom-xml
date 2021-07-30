@@ -11,11 +11,6 @@ namespace Panosen.CodeDom.Xml.Engine
     /// </summary>
     public partial class XmlCodeEngine
     {
-        private const string WHITESPACE = " ";
-        private const string LEFT_Parenthesis = "<";
-        private const string RIGHT_Parenthesis = ">";
-        private const string SLASH = "/";
-
         /// <summary>
         /// Generate
         /// </summary>
@@ -42,7 +37,7 @@ namespace Panosen.CodeDom.Xml.Engine
                 codeWriter.WriteLine();
             }
 
-            codeWriter.Write(options.IndentString).Write(LEFT_Parenthesis).Write(node.Name ?? string.Empty);
+            codeWriter.Write(options.IndentString).Write(Marks.LESS_THAN).Write(node.Name ?? string.Empty);
 
             if (node.Attributes != null && node.Attributes.Count > 0)
             {
@@ -62,11 +57,11 @@ namespace Panosen.CodeDom.Xml.Engine
 
             if ((node.Children == null || node.Children.Count == 0) && string.IsNullOrEmpty(node.Content))
             {
-                codeWriter.Write(WHITESPACE).Write(SLASH).WriteLine(RIGHT_Parenthesis);
+                codeWriter.Write(Marks.WHITESPACE).Write(Marks.SLASH).WriteLine(Marks.LESS_THAN);
                 return;
             }
 
-            codeWriter.Write(RIGHT_Parenthesis);
+            codeWriter.Write(Marks.GREATER_THAN);
 
             if (node.Children != null && node.Children.Count > 0)
             {
@@ -84,18 +79,18 @@ namespace Panosen.CodeDom.Xml.Engine
                 {
                     codeWriter.WriteLine();
                 }
-                codeWriter.Write(options.IndentString).Write(LEFT_Parenthesis).Write(SLASH).Write(node.Name ?? string.Empty).WriteLine(RIGHT_Parenthesis);
+                codeWriter.Write(options.IndentString).Write(Marks.LESS_THAN).Write(Marks.SLASH).Write(node.Name ?? string.Empty).WriteLine(Marks.GREATER_THAN);
                 return;
             }
 
             if (!string.IsNullOrEmpty(node.Content))
             {
                 codeWriter.Write(node.Content);
-                codeWriter.Write(LEFT_Parenthesis).Write(SLASH).Write(node.Name ?? string.Empty).WriteLine(RIGHT_Parenthesis);
+                codeWriter.Write(Marks.LESS_THAN).Write(Marks.SLASH).Write(node.Name ?? string.Empty).WriteLine(Marks.GREATER_THAN);
                 return;
             }
 
-            codeWriter.Write(options.IndentString).Write(LEFT_Parenthesis).Write(SLASH).Write(node.Name ?? string.Empty).WriteLine(RIGHT_Parenthesis);
+            codeWriter.Write(options.IndentString).Write(Marks.LESS_THAN).Write(Marks.SLASH).Write(node.Name ?? string.Empty).WriteLine(Marks.GREATER_THAN);
         }
     }
 }

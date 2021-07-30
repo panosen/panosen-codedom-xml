@@ -11,17 +11,10 @@ namespace Panosen.CodeDom.Xml.Engine
     /// </summary>
     public class GenerateOptions
     {
-#if DEBUG
         /// <summary>
         /// TabString
         /// </summary>
         public string TabString { get; set; } = "\t";
-#else
-        /// <summary>
-        /// TabString
-        /// </summary>
-        public string TabString { get; set; } = "  ";
-#endif
 
         private Stack<string> indents = new Stack<string>();
 
