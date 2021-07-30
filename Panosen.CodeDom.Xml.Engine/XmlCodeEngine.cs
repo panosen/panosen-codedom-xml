@@ -59,7 +59,7 @@ namespace Panosen.CodeDom.Xml.Engine
 
             if ((node.Children == null || node.Children.Count == 0) && string.IsNullOrEmpty(node.Content))
             {
-                codeWriter.Write(Marks.WHITESPACE).Write(Marks.SLASH).WriteLine(Marks.LESS_THAN);
+                codeWriter.Write(Marks.WHITESPACE).Write(Marks.SLASH).WriteLine(Marks.GREATER_THAN);
                 return;
             }
 

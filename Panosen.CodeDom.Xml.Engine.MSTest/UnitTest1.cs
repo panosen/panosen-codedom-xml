@@ -29,6 +29,11 @@ namespace Panosen.CodeDom.Xml.Engine.MSTest
                 }
             }
 
+            {
+                var propertyGroup = new XmlNode { Name = "PropertyGroup", NewLineBeforeNode = true,  };
+                node.AddChild(propertyGroup);
+            }
+
             XmlCodeEngine generator = new XmlCodeEngine();
 
             StringBuilder builder = new StringBuilder();
@@ -69,6 +74,8 @@ namespace Panosen.CodeDom.Xml.Engine.MSTest
         <TargetFrameworks>net452</TargetFrameworks>
         <TargetFrameworks>net452</TargetFrameworks>
     </PropertyGroup>
+
+    <PropertyGroup />
 
 </Project>
 ";
