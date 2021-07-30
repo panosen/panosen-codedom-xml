@@ -14,9 +14,6 @@ namespace Panosen.CodeDom.Xml.Engine
         /// <summary>
         /// Generate
         /// </summary>
-        /// <param name="node"></param>
-        /// <param name="codeWriter"></param>
-        /// <param name="options"></param>
         public void Generate(XmlNode node, CodeWriter codeWriter, GenerateOptions options = null)
         {
             if (node == null) { return; }
@@ -43,6 +40,7 @@ namespace Panosen.CodeDom.Xml.Engine
             {
                 int attribuesPerLine = options.AttribuesPerLine > 0 ? options.AttribuesPerLine : int.MaxValue;
                 int attributesCount = 0;
+                codeWriter.Write(Marks.WHITESPACE);
                 foreach (var item in node.Attributes)
                 {
                     if (attributesCount >= attribuesPerLine)
@@ -50,7 +48,11 @@ namespace Panosen.CodeDom.Xml.Engine
                         codeWriter.WriteLine().Write(options.IndentString).Write(options.TabString).Write(options.TabString);
                         attributesCount = 0;
                     }
-                    codeWriter.Write($" {item.Key}=\"{item.Value}\"");
+                    if (attributesCount > 0)
+                    {
+                        codeWriter.Write(Marks.WHITESPACE);
+                    }
+                    codeWriter.Write($"{item.Key}=\"{item.Value}\"");
                     attributesCount++;
                 }
             }

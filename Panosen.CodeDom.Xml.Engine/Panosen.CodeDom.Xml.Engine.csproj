@@ -4,7 +4,7 @@
     <TargetFrameworks>net472;netstandard2.0</TargetFrameworks>
     <AssemblyName>Panosen.CodeDom.Xml.Engine</AssemblyName>
     <RootNamespace>Panosen.CodeDom.Xml.Engine</RootNamespace>
-    <Version>1.0.4</Version>
+    <Version>1.0.5</Version>
     <Authors>harriszhang@live.cn</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <DocumentationFile>bin\$(Configuration)\Panosen.CodeDom.Xml.Engine.xml</DocumentationFile>

@@ -25,7 +25,7 @@ namespace Panosen.CodeDom.Xml.Engine.MSTest
 
                 for (int j = 0; j < 3; j++)
                 {
-                    propertyGroup.AddChild(new XmlNode { Name = "TargetFrameworks", Content = "net452;netstandard20" });
+                    propertyGroup.AddChild(new XmlNode { Name = "TargetFrameworks", Content = "net452" });
                 }
             }
 
@@ -42,10 +42,6 @@ namespace Panosen.CodeDom.Xml.Engine.MSTest
 
             var expected = PrepareExpected();
 
-            File.WriteAllText("f:\\1.txt", expected);
-
-            File.WriteAllText("f:\\2.txt", actual);
-
             Assert.AreEqual(expected, actual);
         }
 
@@ -57,21 +53,21 @@ namespace Panosen.CodeDom.Xml.Engine.MSTest
         p2=""v2"">
 
     <PropertyGroup>
-        <TargetFrameworks>net452;netstandard20</TargetFrameworks>
-        <TargetFrameworks>net452;netstandard20</TargetFrameworks>
-        <TargetFrameworks>net452;netstandard20</TargetFrameworks>
+        <TargetFrameworks>net452</TargetFrameworks>
+        <TargetFrameworks>net452</TargetFrameworks>
+        <TargetFrameworks>net452</TargetFrameworks>
     </PropertyGroup>
 
     <PropertyGroup>
-        <TargetFrameworks>net452;netstandard20</TargetFrameworks>
-        <TargetFrameworks>net452;netstandard20</TargetFrameworks>
-        <TargetFrameworks>net452;netstandard20</TargetFrameworks>
+        <TargetFrameworks>net452</TargetFrameworks>
+        <TargetFrameworks>net452</TargetFrameworks>
+        <TargetFrameworks>net452</TargetFrameworks>
     </PropertyGroup>
 
     <PropertyGroup>
-        <TargetFrameworks>net452;netstandard20</TargetFrameworks>
-        <TargetFrameworks>net452;netstandard20</TargetFrameworks>
-        <TargetFrameworks>net452;netstandard20</TargetFrameworks>
+        <TargetFrameworks>net452</TargetFrameworks>
+        <TargetFrameworks>net452</TargetFrameworks>
+        <TargetFrameworks>net452</TargetFrameworks>
     </PropertyGroup>
 
 </Project>

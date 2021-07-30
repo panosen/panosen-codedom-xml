@@ -14,7 +14,7 @@ namespace Panosen.CodeDom.Xml.Engine
         /// <summary>
         /// TabString
         /// </summary>
-        public string TabString { get; set; } = "\t";
+        public string TabString { get; set; } = "    ";
 
         private Stack<string> indents = new Stack<string>();
 
